@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "831423507909",
+    "project_id": "tfgpeluqueria",
+    "storage_bucket": "tfgpeluqueria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831423507909:android:a174af10f0f3cf1804efac",
+        "android_client_info": {
+          "package_name": "com.example.tfg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831423507909-sv9ton58g2f16o2ok2bnuckjioo1kl1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlrBZSD2n9UDt3Jkg7chce4GXZ1lx9OxU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831423507909-sv9ton58g2f16o2ok2bnuckjioo1kl1g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

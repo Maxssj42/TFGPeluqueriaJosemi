@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".conocenosActivity"
+    android:background="@color/negroFondo"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Aquí puedes agregar los componentes que quieras -->
+
+
+            <!-- Y así sucesivamente -->
+
+            <TextView
+                android:id="@+id/josemiTheBarber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+                android:text="JOSEMI ''THE BARBER''"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/josemi_conocenos" />
+
+
+            <TextView
+                android:id="@+id/equipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="40dp"
+
+                android:text="EQUIPO:"
+                android:textColor="@color/white"
+                android:layout_gravity="left"
+
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/josemi"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/josemi"
+                ></ImageView>
+
+            <TextView
+                android:id="@+id/josemiTexto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Josemi Oliva"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/morillasImagen"
+                android:layout_marginTop="70dp"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/morillas"
+                ></ImageView>
+
+            <TextView
+                android:id="@+id/morillasTexto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Alejandro Morillas"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/diegoImagen"
+                android:layout_marginTop="70dp"
+                android:layout_width="300dp"
+                android:layout_height="400dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/diego"
+                ></ImageView>
+
+            <TextView
+                android:id="@+id/diegoTexto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Diego Martín"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/conocenosTexto2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp"
+                android:text="CONOCENOS"
+                android:textColor="@color/white"
+                android:layout_gravity="left"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textoConocenos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:text="Josemi The Barber representa la unión entre profesionalidad y personalidad. Nace de la adaptacion de técnicas clásicas a nuestra época. Esta fusión trata de conservar la esencia del cliente con nuestro enfoque artístico."
+                android:textColor="@color/white"
+                android:layout_gravity="left"
+                android:textSize="20dp"
+                 />
+            <TextView
+                android:id="@+id/dondeEstamosTexto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp"
+                android:text="DONDE ESTAMOS"
+                android:textColor="@color/white"
+                android:layout_gravity="left"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/localizacionImagen"
+                android:layout_marginTop="30dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_baseline_location_on_24"
+                >
+
+
+            </ImageView>
+            <TextView
+                android:id="@+id/contactanos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="40dp"
+                android:text="CONTACTANOS"
+                android:textColor="@color/white"
+                android:layout_gravity="left"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/telefono1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:text="910859527"
+
+
+                android:textColor="@color/white"
+                android:layout_gravity="left"
+                android:textSize="20dp"
+                 />
+            <TextView
+                android:id="@+id/telefono2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:text="622590569 (Solo formaciones)"
+
+
+                android:textColor="@color/white"
+                android:layout_gravity="left"
+                android:textSize="20dp"
+                />
+
+
+            <ImageView
+                android:id="@+id/inicio5"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_marginBottom="128dp"
+                android:layout_marginTop="40dp"
+                android:layout_gravity="center"
+
+
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/inicio_blanco" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
