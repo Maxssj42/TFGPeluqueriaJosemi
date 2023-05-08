@@ -67,26 +67,7 @@ public class MiCitaActivity extends AppCompatActivity {
                 builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseFirestore db = FirebaseFirestore.getInstance();
-                        String currentUser = mAuth.getCurrentUser().getUid();
-                        // Obtener la referencia del documento "citaId" de la colección "Citas"
-                        DocumentReference docRef = db.collection("Citas").document(currentUser);
-
-                        docRef.delete()
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Log.d(TAG, "Documento borrado correctamente!");
-
-                                        startActivity(new Intent(MiCitaActivity.this, CitaCalendarioPeluquero.class));
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.w(TAG, "Error al borrar documento", e);
-                                    }
-                                });
+                        startActivity(new Intent(MiCitaActivity.this, CitaCalendarioPeluquero.class));
                     }
                 });
 
