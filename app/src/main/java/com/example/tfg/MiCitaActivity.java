@@ -40,6 +40,7 @@ public class MiCitaActivity extends AppCompatActivity {
         fechaTexto = findViewById(R.id.fechaEditable);
         inicio = findViewById(R.id.inicio3);
         cancelarCita = findViewById(R.id.cancelarCita);
+        Button modificarCita = findViewById(R.id.modificarCita);
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,6 +48,53 @@ public class MiCitaActivity extends AppCompatActivity {
             }
         });
 
+        modificarCita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MiCitaActivity.this);
+                builder.setTitle("Modificar Cita");
+                builder.setMessage("¿Desea modificar la cita?");
+
+                // Agregar botón para cancelar la operación
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        // No hacer nada
+                    }
+                });
+
+                // Agregar botón para confirmar la operación
+                builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        String currentUser = mAuth.getCurrentUser().getUid();
+                        // Obtener la referencia del documento "citaId" de la colección "Citas"
+                        DocumentReference docRef = db.collection("Citas").document(currentUser);
+
+                        docRef.delete()
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG, "Documento borrado correctamente!");
+
+                                        startActivity(new Intent(MiCitaActivity.this, CitaCalendarioPeluquero.class));
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error al borrar documento", e);
+                                    }
+                                });
+                    }
+                });
+
+                // Mostrar el diálogo
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
         cancelarCita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

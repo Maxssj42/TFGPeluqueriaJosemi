@@ -140,11 +140,23 @@
             android:layout_width="169dp"
             android:layout_height="49dp"
             android:layout_gravity="center"
+            android:layout_marginTop="110dp"
+            android:background="@drawable/boton_bordes_redondos_azul"
+            android:minHeight="48dp"
+
+            android:text="CANCELAR"
+            android:textColor="@color/white">
+        </Button>
+        <Button
+            android:id="@+id/modificarCita"
+            android:layout_width="169dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
             android:layout_marginTop="170dp"
             android:background="@drawable/boton_bordes_redondos_azul"
             android:minHeight="48dp"
 
-            android:text="CANCELAR CITA"
+            android:text="Modifcar"
             android:textColor="@color/white">
 
 
