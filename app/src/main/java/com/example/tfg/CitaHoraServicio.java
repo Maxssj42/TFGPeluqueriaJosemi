@@ -136,7 +136,7 @@ public class CitaHoraServicio extends AppCompatActivity {
                 horasDisponibles.removeAll(horasOcupadas);
 
                 // Llenar el selector box con las horas disponibles
-                horasDisponibles.add(0, "SELECCIONA UNA HORA");
+                horasDisponibles.add(0, "HORA");
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                         android.R.layout.simple_spinner_item, horasDisponibles);
                 spinnerHora.setAdapter(adapter);
@@ -150,7 +150,7 @@ public class CitaHoraServicio extends AppCompatActivity {
         reservar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (horaSeleccionada.equals("SELECCIONA UNA HORA") || servicioSeleccionado.equals("SERVICIO")){
+                if (horaSeleccionada.equals("HORA") || servicioSeleccionado.equals("SERVICIO")){
                     Toast.makeText(CitaHoraServicio.this, "Debes seleccionar una opcion valida", Toast.LENGTH_SHORT).show();
                 }else{
                     FirebaseUser currentUser = mAuth.getCurrentUser();

@@ -28,7 +28,8 @@ import java.util.Map;
 public class ActivityRegistro extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    private EditText editTextName, editTextPhone, editTextEmail, editTextContraseña;
+    private EditText editTextName, editTextPhone, editTextEmail, editTextContraseña, editTextContraseñaConfirmar;
+
     private Button buttonRegister;
 
     private static final String TAG = "MainActivity";
@@ -45,6 +46,7 @@ public class ActivityRegistro extends AppCompatActivity {
         editTextPhone = findViewById(R.id.telefono);
         buttonRegister = findViewById(R.id.botonRegistrar);
         editTextContraseña = findViewById(R.id.contraseña);
+        editTextContraseñaConfirmar = findViewById(R.id.contraseñaConfirmar);
         editTextEmail =findViewById(R.id.email);
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +61,7 @@ public class ActivityRegistro extends AppCompatActivity {
         final String name = editTextName.getText().toString().trim();
         final String phone = editTextPhone.getText().toString().trim();
         final String contraseña = editTextContraseña.getText().toString();
+        final String contraseñaConfirmar = editTextContraseñaConfirmar.getText().toString();
         if (TextUtils.isEmpty(name)) {
             editTextName.setError("Se requiere un nombre");
             return;
@@ -79,48 +82,59 @@ public class ActivityRegistro extends AppCompatActivity {
             return;
         }
 
+        if (contraseñaConfirmar != contraseña){
+            Toast.makeText(this, "Las contraseñas deben coincidir", Toast.LENGTH_SHORT).show();
+        }else{
+            if (contraseña.length()<6){
+                Toast.makeText(this, "La contraseña debe tener un minimo de 6 caracteres", Toast.LENGTH_SHORT).show();
+            }else{
+                mAuth.createUserWithEmailAndPassword(email, contraseña)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Obtener el ID del usuario registrado
+                                    String uid = task.getResult().getUser().getUid();
+
+                                    // Crear un nuevo documento para el usuario en Firestore
+                                    Map<String, Object> user = new HashMap<>();
+                                    user.put("nombre", name);
+                                    user.put("telefono", phone);
+                                    user.put("email", email);
+                                    user.put("contraseña", contraseña);
+                                    db.collection("Usuarios").document(uid).set(user)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void aVoid) {
+                                                    Toast.makeText(ActivityRegistro.this, "Usuario Registrado con exito", Toast.LENGTH_SHORT).show();
+                                                    startActivity(new Intent(ActivityRegistro.this, MainActivity.class));
+                                                    finish();
+                                                }
+                                            })
+                                            .addOnFailureListener(new OnFailureListener() {
+                                                @Override
+                                                public void onFailure(@NonNull Exception e) {
+                                                    Toast.makeText(ActivityRegistro.this, "Error al registrar el usuario", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+                                } else {
+                                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                                        Toast.makeText(ActivityRegistro.this, "El correo electrónico introducido ya está registrado", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(ActivityRegistro.this, "Error registrando el usuario", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            }
+                        });
+
+            }
+
+
+        }
 
 
 
         // Registrar el usuario en Firebase Authentication
-        mAuth.createUserWithEmailAndPassword(email, contraseña)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Obtener el ID del usuario registrado
-                            String uid = task.getResult().getUser().getUid();
-
-                            // Crear un nuevo documento para el usuario en Firestore
-                            Map<String, Object> user = new HashMap<>();
-                            user.put("nombre", name);
-                            user.put("telefono", phone);
-                            user.put("email", email);
-                            user.put("contraseña", contraseña);
-                            db.collection("Usuarios").document(uid).set(user)
-                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Toast.makeText(ActivityRegistro.this, "Usuario Registrado con exito", Toast.LENGTH_SHORT).show();
-                                            startActivity(new Intent(ActivityRegistro.this, MainActivity.class));
-                                            finish();
-                                        }
-                                    })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Toast.makeText(ActivityRegistro.this, "Error al registrar el usuario", Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                        } else {
-                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                                Toast.makeText(ActivityRegistro.this, "El correo electrónico introducido ya está registrado", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(ActivityRegistro.this, "Error registrando el usuario", Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    }
-                });
 
 
     }

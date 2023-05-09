@@ -59,7 +59,7 @@ public class CitaCalendarioPeluquero extends AppCompatActivity {
         continuar = findViewById(R.id.continuar);
         inicio4 = findViewById(R.id.inicio4);
         ArrayList<String> peluqueros_array = new ArrayList<>();
-        peluqueros_array.add("SELECCIONA UN PELUQUERO");
+        peluqueros_array.add("PELUQUERO");
         peluqueros_array.add("Josemi");
         peluqueros_array.add("Morillas");
         peluqueros_array.add("Diego");
@@ -104,7 +104,7 @@ public class CitaCalendarioPeluquero extends AppCompatActivity {
                 DatePicker datePicker = (DatePicker) fechaButton.getTag();
                 String peluquero = peluqueroSpinner.getSelectedItem().toString();
 
-                if(peluquero.equals("SELECCIONA UN PELUQUERO")){
+                if(peluquero.equals("PELUQUERO")){
                     Toast.makeText(CitaCalendarioPeluquero.this, "Es necesario seleccionar un peluquero", Toast.LENGTH_SHORT).show();
                 }else{
                     if(datePicker != null){

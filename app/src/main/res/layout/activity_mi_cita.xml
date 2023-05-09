@@ -156,7 +156,7 @@
             android:background="@drawable/boton_bordes_redondos_azul"
             android:minHeight="48dp"
 
-            android:text="Modifcar"
+            android:text="Modificar"
             android:textColor="@color/white">
 
 

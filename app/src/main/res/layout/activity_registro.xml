@@ -63,6 +63,26 @@
         tools:layout_editor_absoluteX="0dp"></EditText>
 
     <EditText
+        android:id="@+id/contraseñaConfirmar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edittextcorner"
+        android:drawableLeft="@drawable/ic_baseline_key_24"
+        android:drawablePadding="20dp"
+        android:hint="Confirmar contraseña"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:inputType="textPassword"
+        android:padding="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        app:layout_constraintVertical_bias="0.231"
+        tools:layout_editor_absoluteX="30dp"></EditText>
+
+    <EditText
         android:id="@+id/contraseña"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -71,7 +91,6 @@
         android:drawablePadding="20dp"
         android:layout_marginTop="20dp"
         android:hint="Contraseña"
-
         android:inputType="textPassword"
         android:padding="20dp"
         android:textColor="@color/black"
@@ -87,35 +106,34 @@
         android:id="@+id/telefono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edittextcorner"
         android:drawableLeft="@drawable/ic_baseline_local_phone_24"
         android:drawablePadding="20dp"
         android:hint="Teléfono"
-        android:layout_marginTop="20dp"
         android:inputType="number"
         android:padding="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contraseña"
-        app:layout_constraintVertical_bias="0.0"
-        android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp"
-        tools:layout_editor_absoluteX="-16dp"></EditText>
+        app:layout_constraintVertical_bias="0.308"
+        tools:layout_editor_absoluteX="16dp"></EditText>
 
     <Button
         android:id="@+id/botonRegistrar"
         android:layout_width="169dp"
         android:layout_height="49dp"
+        android:background="@drawable/boton_bordes_redondos_azul"
         android:text="registrarse"
         android:textColor="@color/white"
-        android:background="@drawable/boton_bordes_redondos_azul"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/telefono"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintVertical_bias="0.459" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
