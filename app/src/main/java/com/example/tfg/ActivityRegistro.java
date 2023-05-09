@@ -82,12 +82,10 @@ public class ActivityRegistro extends AppCompatActivity {
             return;
         }
 
-        if (contraseñaConfirmar != contraseña){
+        if (!contraseñaConfirmar.equals(contraseña)){
             Toast.makeText(this, "Las contraseñas deben coincidir", Toast.LENGTH_SHORT).show();
         }else{
-            if (contraseña.length()<6){
-                Toast.makeText(this, "La contraseña debe tener un minimo de 6 caracteres", Toast.LENGTH_SHORT).show();
-            }else{
+            if (contraseña.length()>=6){
                 mAuth.createUserWithEmailAndPassword(email, contraseña)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
@@ -126,6 +124,9 @@ public class ActivityRegistro extends AppCompatActivity {
                                 }
                             }
                         });
+
+            }else{
+                Toast.makeText(this, "La contraseña debe tener un minimo de 6 caracteres", Toast.LENGTH_SHORT).show();
 
             }
 
