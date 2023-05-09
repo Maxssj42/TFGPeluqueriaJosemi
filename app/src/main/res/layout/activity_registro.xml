@@ -90,7 +90,7 @@
         android:background="@drawable/edittextcorner"
         android:drawableLeft="@drawable/ic_baseline_local_phone_24"
         android:drawablePadding="20dp"
-        android:hint="Telefono"
+        android:hint="Teléfono"
         android:layout_marginTop="20dp"
         android:inputType="number"
         android:padding="20dp"

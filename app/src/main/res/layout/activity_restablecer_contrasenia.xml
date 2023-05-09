@@ -28,7 +28,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Introduce tu direccion \n de correo electronico"
+        android:text="Introduce tu dirección \n de correo electronico"
         android:textSize="20dp"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"

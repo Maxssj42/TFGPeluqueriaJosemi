@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:gravity="center"
-        android:text="Inicia Sesion"
+        android:text="Inicia Sesión"
         android:textColor="@color/white"
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"

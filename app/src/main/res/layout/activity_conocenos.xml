@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"
-                android:text="Josemi The Barber representa la unión entre profesionalidad y personalidad. Nace de la adaptacion de técnicas clásicas a nuestra época. Esta fusión trata de conservar la esencia del cliente con nuestro enfoque artístico."
+                android:text="Josemi The Barber representa la unión entre profesionalidad y personalidad. Nace de la adaptación de técnicas clásicas a nuestra época. Esta fusión trata de conservar la esencia del cliente con nuestro enfoque artístico."
                 android:textColor="@color/white"
                 android:layout_gravity="left"
                 android:textSize="20dp"
@@ -171,7 +171,7 @@
 
                 android:layout_marginTop="40dp"
                 android:layout_marginLeft="40dp"
-                android:text="CONTACTANOS"
+                android:text="CONTÁCTANOS"
                 android:textColor="@color/white"
                 android:layout_gravity="left"
                 android:textSize="30dp"
