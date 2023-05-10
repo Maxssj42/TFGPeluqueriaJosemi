@@ -126,7 +126,7 @@ public class ActivityRegistro extends AppCompatActivity {
                         });
 
             }else{
-                Toast.makeText(this, "La contraseña debe tener un minimo de 6 caracteres", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "La contraseña debe tener un mínimo de 6 caracteres", Toast.LENGTH_SHORT).show();
 
             }
 
