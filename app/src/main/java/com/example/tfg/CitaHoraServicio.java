@@ -151,7 +151,7 @@ public class CitaHoraServicio extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (horaSeleccionada.equals("HORA") || servicioSeleccionado.equals("SERVICIO")){
-                    Toast.makeText(CitaHoraServicio.this, "Debes seleccionar una opcion valida", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CitaHoraServicio.this, "Debes seleccionar una opción válida", Toast.LENGTH_SHORT).show();
                 }else{
                     FirebaseUser currentUser = mAuth.getCurrentUser();
                     String uid = currentUser.getUid();

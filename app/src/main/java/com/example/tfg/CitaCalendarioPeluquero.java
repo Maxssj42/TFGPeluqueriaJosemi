@@ -111,7 +111,7 @@ public class CitaCalendarioPeluquero extends AppCompatActivity {
                             if( (datePicker.getYear() < currentYear)
                                     || (datePicker.getYear() == currentYear && datePicker.getMonth() < currentMonth)
                                     || (datePicker.getYear() == currentYear && datePicker.getMonth() == currentMonth && datePicker.getDayOfMonth() <= currentDay)){
-                                Toast.makeText(CitaCalendarioPeluquero.this, "Selecciona una fecha valida", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CitaCalendarioPeluquero.this, "Selecciona una fecha válida", Toast.LENGTH_SHORT).show();
                             }else{
 
                             int year = datePicker.getYear();
